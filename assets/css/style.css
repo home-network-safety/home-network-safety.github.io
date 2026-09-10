@@ -263,9 +263,16 @@ tbody tr:nth-child(even) { background: rgba(220,234,240,0.28); }
   .brand strong { font-size: 15px; }
   .brand small { display: none; }
   .brand-mark { width: 32px; height: 32px; }
-  .home-hero { min-height: calc(88svh - var(--header-height)); background-position: 70% center; }
+  .home-hero {
+  min-height: calc(76svh - var(--header-height));
+  align-items: start;
+  background-position: 70% center;
+}
   .home-hero::before { background: rgba(9,18,17,0.60); }
-  .hero-inner { width: min(calc(100% - 32px), var(--content-width)); padding: 58px 0 48px; }
+  .hero-inner {
+  width: min(calc(100% - 32px), var(--content-width));
+  padding: 44px 0 40px;
+}
   .home-hero h1 { max-width: 330px; font-size: 40px; line-height: 1.14; }
   .hero-lead { max-width: 330px; margin-top: 18px; font-size: 18px; line-height: 1.65; }
   .hero-actions { margin-top: 26px; }

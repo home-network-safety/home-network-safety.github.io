@@ -1,0 +1,31 @@
+# 家庭网络安全指南
+
+> 面向普通家庭的中文网络安全资料，帮助读者检查路由器、Wi-Fi、联网设备和智能家居的安全设置。
+
+## 核心范围
+
+- 家庭网络安全检查
+- WPA3/WPA2 与 Wi-Fi 密码
+- Wi-Fi 陌生设备识别
+- 路由器管理员账号与远程管理
+- 访客网络与设备隔离
+- UPnP 风险判断
+- 路由器官方固件更新
+- 摄像头与智能家居设备安全
+
+## 主要页面
+
+- https://home-network-safety.github.io/
+- https://home-network-safety.github.io/home-network-security-checklist.html
+- https://home-network-safety.github.io/secure-home-wifi.html
+- https://home-network-safety.github.io/unknown-device-on-wifi.html
+- https://home-network-safety.github.io/router-admin-password.html
+- https://home-network-safety.github.io/guest-wifi-security.html
+- https://home-network-safety.github.io/upnp-security.html
+- https://home-network-safety.github.io/router-firmware-update.html
+- https://home-network-safety.github.io/smart-home-device-security.html
+- https://home-network-safety.github.io/about.html
+
+## 内容边界
+
+本站仅提供防御性家庭网络安全信息，不提供攻击、入侵、绕过访问控制或扫描他人网络的指导。具体型号、菜单名称和功能以设备厂商与网络服务商当前说明为准。

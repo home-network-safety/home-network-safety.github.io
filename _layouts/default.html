@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+    <meta name="robots" content="{{ page.robots | default: 'index,follow,max-image-preview:large' }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="{% if page.home %}website{% else %}article{% endif %}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+    <meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ page.image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+    <meta name="theme-color" content="#222827">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=1' | relative_url }}">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "{% if page.home %}WebSite{% else %}WebPage{% endif %}",
+      "name": {{ page.title | default: site.title | jsonify }},
+      "description": {{ page.description | default: site.description | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site.url | jsonify }}
+      }
+    }
+    </script>
+  </head>
+  <body class="{% if page.home %}home-page{% else %}article-page{% endif %}">
+    <a class="skip-link" href="#main-content">跳到正文</a>
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="家庭网络安全指南首页">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span><strong>家庭网络安全指南</strong><small>HOME NETWORK SAFETY</small></span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="主要导航">
+          <a href="{{ '/' | relative_url }}">首页</a>
+          <a href="{{ '/home-network-security-checklist.html' | relative_url }}">安全检查</a>
+          <a href="{{ '/secure-home-wifi.html' | relative_url }}">Wi-Fi 安全</a>
+          <a href="{{ '/router-admin-password.html' | relative_url }}">路由器安全</a>
+          <a href="{{ '/smart-home-device-security.html' | relative_url }}">智能设备</a>
+          <a href="{{ '/about.html' | relative_url }}">关于本站</a>
+        </nav>
+      </div>
+    </header>
+
+    {% if page.home %}
+      <main id="main-content">{{ content }}</main>
+    {% else %}
+      <main id="main-content" class="article-shell">
+        <article class="article-content">
+          <header class="article-header">
+            <p class="article-kicker">{{ page.category | default: '家庭网络安全' }}</p>
+            <h1>{{ page.h1 | default: page.title }}</h1>
+            {% if page.summary %}<p class="article-summary">{{ page.summary }}</p>{% endif %}
+            {% if page.updated %}<p class="updated">更新日期：{{ page.updated }}</p>{% endif %}
+          </header>
+          {{ content }}
+        </article>
+        <aside class="article-next" aria-label="下一步">
+          <p>不知道从哪里开始？</p>
+          <a href="{{ '/home-network-security-checklist.html' | relative_url }}">按优先级完成家庭网络安全检查</a>
+        </aside>
+      </main>
+    {% endif %}
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div><strong>家庭网络安全指南</strong><p>检查设置，减少暴露，保留可恢复的操作路径。</p></div>
+        <nav aria-label="页脚导航">
+          <a href="{{ '/home-network-security-checklist.html' | relative_url }}">安全检查</a>
+          <a href="{{ '/about.html' | relative_url }}">关于本站</a>
+        </nav>
+        <p class="disclaimer">内容用于一般家庭网络安全参考。不同设备的菜单与功能可能不同，请以设备厂商和网络服务商的当前说明为准。</p>
+      </div>
+    </footer>
+    <script src="{{ '/assets/js/site.js?v=1' | relative_url }}" defer></script>
+  </body>
+</html>

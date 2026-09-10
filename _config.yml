@@ -1,0 +1,15 @@
+title: 家庭网络安全指南
+description: 检查路由器、Wi-Fi 与联网设备的安全设置，降低陌生设备接入、弱密码、过期固件和智能家居暴露风险。
+lang: zh-CN
+url: https://home-network-safety.github.io
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/images/home-network-safety-hero.webp

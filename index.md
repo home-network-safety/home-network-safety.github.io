@@ -100,3 +100,19 @@ updated: 2026-09-10
     </div>
   </div>
 </section>
+<section class="partner-banner" aria-label="推广内容" data-reveal>
+  <div class="partner-banner-inner">
+    <div class="partner-banner-copy">
+      <p class="partner-label">推广 · 网络连接工具</p>
+      <h2>安全设置完成后，仍有连接体验问题？</h2>
+      <p>家庭网络加固不能解决游戏延迟、视频卡顿或远程办公线路问题。你可以前往虎跃加速器官网了解适用场景，并遵守所在地法律和服务条款。</p>
+    </div>
+    <a
+      class="partner-banner-link"
+      href="https://huyuejsq.co/"
+      target="_blank"
+      rel="sponsored noopener noreferrer"
+      onclick="if (typeof gtag === 'function') { gtag('event', 'outbound_click', { link_url: this.href, link_name: 'huyue_homepage_banner' }); }"
+    >虎跃加速器</a>
+  </div>
+</section>

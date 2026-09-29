@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add('js');</script>
     <title>{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
     <meta name="robots" content="{{ page.robots | default: 'index,follow,max-image-preview:large' }}">
@@ -10,23 +11,27 @@
     <meta property="og:locale" content="zh_CN">
     <meta property="og:type" content="{% if page.home %}website{% else %}article{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
-    <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+    <meta property="og:title" content="{{ page.h1 | default: page.title | default: site.title | escape }}">
     <meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:image" content="{{ page.image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url }}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
+    <meta name="twitter:title" content="{{ page.h1 | default: page.title | default: site.title | escape }}">
     <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+    <meta name="twitter:image" content="{{ page.image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url }}">
     <meta name="theme-color" content="#222827">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=1' | relative_url }}">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "{% if page.home %}WebSite{% else %}WebPage{% endif %}",
+      "@type": "{% if page.home %}WebSite{% elsif page.article %}Article{% else %}WebPage{% endif %}",
       "name": {{ page.title | default: site.title | jsonify }},
+      {% if page.article %}"headline": {{ page.h1 | default: page.title | jsonify }},
+      "image": {{ page.image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url | jsonify }},{% endif %}
       "description": {{ page.description | default: site.description | jsonify }},
       "url": {{ page.url | absolute_url | jsonify }},
       "inLanguage": "zh-CN",
+      {% if page.article and page.updated %}"dateModified": {{ page.updated | jsonify }},{% endif %}
       "isPartOf": {
         "@type": "WebSite",
         "name": {{ site.title | jsonify }},
@@ -81,12 +86,12 @@
           {{ content }}
         </article>
         <aside class="article-next" aria-label="下一步">
-          <p>不知道从哪里开始？</p>
-          <a href="{{ '/home-network-security-checklist.html' | relative_url }}">按优先级完成家庭网络安全检查</a>
+          <p>{{ page.next_label | default: '继续检查' }}</p>
+          <a href="{{ page.next_url | default: '/home-network-security-checklist.html' | relative_url }}">{{ page.next_title | default: '按优先级完成家庭网络安全检查' }}</a>
         </aside>
       </main>
     {% endif %}
-    {% unless page.robots contains 'noindex' %}
+    {% if page.show_partner %}
       <section class="partner-banner" aria-label="推广内容" data-reveal>
         <div class="partner-banner-inner">
           <div class="partner-banner-copy">
@@ -103,7 +108,7 @@
           >访问虎跃加速器官网</a>
         </div>
       </section>
-    {% endunless %}
+    {% endif %}
     <footer class="site-footer">
       <div class="footer-inner">
         <div><strong>家庭网络安全指南</strong><p>检查设置，减少暴露，保留可恢复的操作路径。</p></div>

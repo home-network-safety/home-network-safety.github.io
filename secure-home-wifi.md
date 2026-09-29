@@ -5,7 +5,11 @@ description: 解释家庭 Wi-Fi 的 WPA3/WPA2 加密、密码、SSID、WPS、访
 h1: 家庭 Wi-Fi 怎么设置更安全？
 summary: 优先使用 WPA3 Personal 或 WPA2 Personal，设置独立强密码，关闭不需要的 WPS，并定期检查已连接设备。隐藏 Wi-Fi 名称不是核心防护。
 category: Wi-Fi 安全
-updated: 2026-09-10
+updated: 2026-09-29
+article: true
+next_label: 如果看到不认识的终端
+next_title: 按步骤识别并处理陌生设备
+next_url: /unknown-device-on-wifi.html
 permalink: /secure-home-wifi.html
 ---
 ## 推荐设置一览
@@ -41,7 +45,7 @@ permalink: /secure-home-wifi.html
 - 与邮箱、购物或路由器管理员账号相同的密码。
 - `12345678`、连续键盘字符和公开常见密码。
 
-如果需要向访客分享网络，使用访客网络，避免长期传播主 Wi-Fi 密码。
+如果需要向访客分享网络，使用[访客网络](/guest-wifi-security.html)，避免长期传播主 Wi-Fi 密码。
 
 ## 网络名称需要隐藏吗？
 
@@ -53,7 +57,7 @@ permalink: /secure-home-wifi.html
 
 WPS 用按键或 PIN 简化连接过程。如果家中设备都能直接输入 Wi-Fi 密码，就没有必要长期开启。
 
-关闭前确认打印机、扩展器或旧智能设备已经完成连接；关闭后，这些设备通常仍会保持现有连接，只是以后新增设备需要手动输入密码。
+关闭前确认打印机、扩展器或旧智能设备已经完成连接；关闭后，这些设备通常仍会保持现有连接，只是以后新增设备需要手动输入密码。如果设备列表里已经出现无法确认的终端，继续按[陌生设备排查流程](/unknown-device-on-wifi.html)处理。
 
 ## 是否应该把 2.4GHz 和 5GHz 分开？
 
@@ -70,7 +74,7 @@ WPS 用按键或 PIN 简化连接过程。如果家中设备都能直接输入 W
 
 ## 旧路由器什么时候应该更换？
 
-出现以下情况时，值得评估更换：
+如果路由器多年没有更新，先按[固件更新与支持状态检查](/router-firmware-update.html)确认它是否仍受维护。出现以下情况时，值得评估更换：
 
 - 官方已经停止提供安全更新。
 - 更新后仍只有 WEP 或旧 WPA。
@@ -78,18 +82,12 @@ WPS 用按键或 PIN 简化连接过程。如果家中设备都能直接输入 W
 - 厂商无法说明支持周期或最新固件。
 - 设备频繁异常，且已排除电源、宽带和配置问题。
 
-## 常见问题
+## 几个常见误区
 
-### WPA3 一定比 WPA2 快吗？
+**WPA3 不会自动让网速更快。** 安全模式和实际速度不是一回事，速度还受频段、信号、干扰和终端能力影响。
 
-安全模式不等同于网速。实际速度还受路由器性能、频段、信号、干扰和终端能力影响。选择 WPA3 主要是为了更好的安全机制。
+**只改 Wi-Fi 名称不能赶走陌生设备。** 需要同时更换密码并使用可靠加密，旧连接凭据才会失效。
 
-### 改 Wi-Fi 名称能赶走陌生设备吗？
-
-只有同时修改密码并使用可靠加密，才能让旧连接凭据失效。单独改名称不够。
-
-### Wi-Fi 密码需要经常更换吗？
-
-不必机械地频繁更换。发现泄露、陌生设备、人员变动或密码过弱时立即更换更有意义。
+**Wi-Fi 密码不需要按固定周期机械更换。** 发现泄露、陌生设备、人员变化或密码过弱时再换更有意义。
 
 <p class="source-note">参考：<a href="https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network">FTC：How To Secure Your Home Wi-Fi Network</a>。该资料明确建议 WPA3 Personal 或 WPA2 Personal，并区分 Wi-Fi 密码与路由器管理员密码。</p>

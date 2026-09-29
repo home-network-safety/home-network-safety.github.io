@@ -5,7 +5,11 @@ description: 介绍访客 Wi-Fi 的独立密码、内网访问、客户端隔离
 h1: 路由器访客网络怎么设置？
 summary: 访客网络的价值不只是另一个 Wi-Fi 名称，而是减少主密码分享，并限制访客或低信任设备访问家庭电脑、存储和管理页面。
 category: Wi-Fi 安全
-updated: 2026-09-10
+updated: 2026-09-29
+article: true
+next_label: 如果访客网络还承载智能设备
+next_title: 继续检查摄像头与智能家居设备
+next_url: /smart-home-device-security.html
 permalink: /guest-wifi-security.html
 ---
 ## 哪些家庭适合启用访客网络？
@@ -61,19 +65,5 @@ permalink: /guest-wifi-security.html
 - 对摄像头、麦克风和云存储权限的检查。
 
 它只是网络分段的一层，不能修复设备本身的弱密码或漏洞。
-
-## 常见问题
-
-### 访客网络会让网速变慢吗？
-
-启用本身不一定明显影响速度。访客设备仍会共享宽带和无线资源，设备多时可能占用带宽。可按需设置限速，但不要把限速当成安全隔离。
-
-### 访客能看到彼此的设备吗？
-
-取决于是否支持并开启客户端隔离。用两台测试设备互相尝试发现或访问，不能只看设置名称判断。
-
-### 访客网络应该一直开着吗？
-
-经常使用或承载智能设备时可以保持开启；只为临时访客创建时，可在使用后关闭或设置到期时间。
 
 <p class="source-note">参考：<a href="https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network">FTC 家庭 Wi-Fi 指南</a>和 <a href="https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/3304674/nsa-releases-best-practices-for-securing-your-home-network/">NSA 家庭网络安全实践</a>均建议利用独立网络减少设备之间的风险传播。</p>

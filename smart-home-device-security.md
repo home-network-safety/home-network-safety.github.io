@@ -5,7 +5,11 @@ description: 为家庭摄像头、门铃、电视、音箱、插座和智能家�
 h1: 智能家居设备怎么检查安全？
 summary: 先建立设备清单，再处理默认密码、账号保护、固件更新、应用权限和不必要的远程访问。摄像头与门锁应给予更高优先级。
 category: 智能设备
-updated: 2026-09-10
+updated: 2026-09-29
+article: true
+next_label: 需要把低信任设备分开？
+next_title: 设置并验证访客网络
+next_url: /guest-wifi-security.html
 permalink: /smart-home-device-security.html
 ---
 ## 先按风险给设备排序
@@ -20,7 +24,7 @@ permalink: /smart-home-device-security.html
 
 ## 第一步：建立设备清单
 
-记录每台设备的名称、位置、品牌型号、购买时间、账号、配套应用和更新状态。再与路由器的已连接设备列表核对。
+记录每台设备的名称、位置、品牌型号、购买时间、账号、配套应用和更新状态。再与路由器的已连接设备列表核对；如果列表里出现无法确认的终端，可以按[陌生设备排查步骤](/unknown-device-on-wifi.html)逐台确认。
 
 清单的作用不是追求复杂资产管理，而是回答：这是什么、谁在用、是否仍更新、坏了或卖掉时如何清除数据。
 
@@ -36,7 +40,7 @@ permalink: /smart-home-device-security.html
 - 保持手机上的配套应用更新。
 - 只从官方应用商店或厂商渠道安装应用。
 - 查看厂商是否仍维护该型号。
-- 对停止支持且能访问敏感数据的设备，优先替换或断网使用。
+- 对停止支持且能访问敏感数据的设备，优先替换或断网使用。路由器本身也应定期检查[固件和支持状态](/router-firmware-update.html)。
 
 ## 第四步：检查权限和云功能
 
@@ -74,19 +78,5 @@ permalink: /smart-home-device-security.html
 4. 清除存储卡、录像和个人数据。
 5. 在路由器中删除设备备注和固定地址规则。
 6. 新住所接手的智能设备也应重置、更新并重新绑定账号。
-
-## 常见问题
-
-### 智能设备放访客网络就绝对安全吗？
-
-不是。网络隔离能限制部分横向访问，但不能解决弱密码、云账号泄露、过期固件或不合理权限。
-
-### 不用的智能设备关机就够了吗？
-
-长期不用应同时从账号、应用和路由器中移除，并根据设备类型清除数据。仅关机可能留下云端授权和个人信息。
-
-### 如何判断一台智能设备值得继续使用？
-
-看它是否仍获更新、能否修改默认密码、是否提供必要的账号保护、权限是否透明，以及厂商是否给出支持渠道。
 
 <p class="source-note">参考：<a href="https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home">FTC 家庭联网设备安全建议</a>和 <a href="https://consumer.ftc.gov/articles/how-secure-your-home-security-cameras">FTC 家庭摄像头安全指南</a>。设备功能与数据处理方式应以厂商当前隐私和支持文件为准。</p>

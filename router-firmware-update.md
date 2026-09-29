@@ -5,7 +5,11 @@ description: 提供路由器固件更新前的型号确认、官方来源、配�
 h1: 路由器固件怎么安全更新？
 summary: 先确认完整型号和硬件版本，只使用厂商或运营商官方固件；更新前保存配置，更新时保持供电，完成后核对安全设置和设备连接。
 category: 路由器安全
-updated: 2026-09-10
+updated: 2026-09-29
+article: true
+next_label: 更新完成后
+next_title: 重新核对 Wi-Fi 安全设置
+next_url: /secure-home-wifi.html
 permalink: /router-firmware-update.html
 ---
 ## 为什么要更新路由器固件？
@@ -83,19 +87,5 @@ permalink: /router-firmware-update.html
 - 已公开的安全问题没有适用于该型号的修复。
 
 停止支持不等于当天就会被攻击，但意味着后续风险很难通过更新解决。
-
-## 常见问题
-
-### 更新固件会清除设置吗？
-
-有些更新会保留，有些重大更新可能重置。必须先阅读版本说明并保存恢复信息。
-
-### 更新时可以用 Wi-Fi 吗？
-
-部分厂商允许，但有线连接更不容易因无线重启而中断管理过程。以该型号说明为准。
-
-### 固件版本日期旧就是不安全吗？
-
-日期只能提示维护活跃度，不能单独证明存在漏洞。应结合厂商支持状态、安全公告和可用更新判断。
 
 <p class="source-note">参考：<a href="https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network">FTC 家庭 Wi-Fi 指南</a>与 <a href="https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home">FTC 家庭联网设备安全建议</a>均强调保持路由器和设备软件更新。</p>

@@ -5,7 +5,11 @@ description: 解释 UPnP 如何自动建立端口映射、关闭后可能影响�
 h1: 路由器 UPnP 要不要关闭？
 summary: UPnP 能让设备和应用自动请求网络配置，使用方便，但也扩大了自动开放端口的范围。没有明确需求时建议关闭；有游戏、摄像头或远程访问需求时应先检查影响。
 category: 路由器安全
-updated: 2026-09-10
+updated: 2026-09-29
+article: true
+next_label: 如果路由器设置很多年没动过
+next_title: 检查固件和设备支持状态
+next_url: /router-firmware-update.html
 permalink: /upnp-security.html
 ---
 ## UPnP 是什么？

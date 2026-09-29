@@ -5,7 +5,11 @@ description: 说明路由器管理员密码与 Wi-Fi 密码的区别，提供修
 h1: 路由器管理员密码怎么设置？
 summary: 管理员密码控制整个路由器配置，必须与 Wi-Fi 密码分开。先修改默认凭据，再关闭不需要的远程管理，并保存可靠的恢复方式。
 category: 路由器安全
-updated: 2026-09-10
+updated: 2026-09-29
+article: true
+next_label: 后台控制权确认后
+next_title: 检查 UPnP 和自动端口映射
+next_url: /upnp-security.html
 permalink: /router-admin-password.html
 ---
 ## 管理员密码和 Wi-Fi 密码有什么区别？
@@ -65,8 +69,8 @@ permalink: /router-admin-password.html
 
 - DNS 服务器是否是你或网络服务商预期的值。
 - 是否存在陌生端口转发、DMZ 主机或远程管理规则。
-- WPS 和 UPnP 是否按实际需求开启。
-- 固件更新来源和自动更新状态。
+- WPS 和 [UPnP](/upnp-security.html) 是否按实际需求开启。
+- [固件更新](/router-firmware-update.html)来源和自动更新状态。
 - 已连接设备是否都能识别。
 
 ## 常见问题
@@ -78,9 +82,5 @@ permalink: /router-admin-password.html
 ### 浏览器提示管理页面不安全怎么办？
 
 部分旧路由器的本地管理页面没有完整 HTTPS 证书。先确认你连接的是自己的家庭网络和正确本地地址，不要在公共网络上继续输入密码。具体处理以厂商说明为准。
-
-### 家人需要管理路由器怎么办？
-
-设备支持独立成员账号时优先使用；不支持时，应明确谁保管管理员密码，不要把它写在公开位置或与访客分享。
 
 <p class="source-note">参考：<a href="https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network">FTC 家庭 Wi-Fi 安全建议</a>强调修改默认管理员凭据、关闭不需要的远程管理，并在操作完成后退出管理员账号。</p>

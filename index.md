@@ -3,8 +3,9 @@ home: true
 title: 家庭网络安全指南
 seo_title: 家庭网络安全指南｜检查路由器、Wi-Fi 与智能设备
 description: 从路由器密码、Wi-Fi 加密、陌生设备、访客网络、UPnP、固件到智能家居，按优先级检查家庭网络安全设置。
+show_partner: true
 permalink: /
-updated: 2026-09-10
+updated: 2026-09-29
 ---
 <section class="home-hero">
   <div class="hero-inner">
@@ -72,7 +73,7 @@ updated: 2026-09-10
     <div class="path-grid">
       <div class="path">
         <h3>先做完整检查</h3>
-        <p>用十分钟核对密码、加密、设备、固件和远程管理。</p>
+        <p>快速核对密码、加密、设备、固件和远程管理。</p>
         <a href="/home-network-security-checklist.html">打开安全检查清单</a>
       </div>
       <div class="path">
@@ -94,7 +95,7 @@ updated: 2026-09-10
     <p class="section-kicker">完整主题</p>
     <h2>从路由器入口到家中每台联网设备</h2>
     <div class="path-grid">
-      <div class="path"><h3>路由器控制权</h3><p>管理密码、远程管理、UPnP 和官方固件更新。</p><a href="/router-admin-password.html">进入路由器安全</a></div>
+      <div class="path"><h3>路由器控制权</h3><p>管理密码、远程管理、UPnP 和官方固件更新。</p><a href="/router-admin-password.html">进入路由器安全</a><br><a href="/upnp-security.html">检查 UPnP</a> · <a href="/router-firmware-update.html">检查固件更新</a></div>
       <div class="path"><h3>家庭成员与访客</h3><p>主网络密码、访客网络和设备间隔离。</p><a href="/guest-wifi-security.html">设置访客网络</a></div>
       <div class="path"><h3>摄像头与智能家居</h3><p>默认账号、两步验证、应用权限和停止支持的设备。</p><a href="/smart-home-device-security.html">查看设备安全清单</a></div>
     </div>

@@ -1,31 +1,22 @@
 # 家庭网络安全指南
 
-> 面向普通家庭的中文网络安全资料，帮助读者检查路由器、Wi-Fi、联网设备和智能家居的安全设置。
+家庭路由器、Wi-Fi 与智能设备的中文安全检查和故障排查资料。
 
-## 核心范围
+- [家庭网络安全自检](https://home-network-safety.github.io/network-security-self-check.html)
+- [开始检查家庭网络](https://home-network-safety.github.io/home-network-security-checklist.html)
+- [家庭 Wi-Fi 安全设置](https://home-network-safety.github.io/secure-home-wifi.html)
+- [Wi-Fi 出现陌生设备](https://home-network-safety.github.io/unknown-device-on-wifi.html)
+- [路由器管理员密码](https://home-network-safety.github.io/router-admin-password.html)
+- [访客网络](https://home-network-safety.github.io/guest-wifi-security.html)
+- [UPnP 设置](https://home-network-safety.github.io/upnp-security.html)
+- [固件更新](https://home-network-safety.github.io/router-firmware-update.html)
+- [智能家居设备安全](https://home-network-safety.github.io/smart-home-device-security.html)
+- [关于本站](https://home-network-safety.github.io/about.html)
 
-- 家庭网络安全检查
-- WPA3/WPA2 与 Wi-Fi 密码
-- Wi-Fi 陌生设备识别
-- 路由器管理员账号与远程管理
-- 访客网络与设备隔离
-- UPnP 风险判断
-- 路由器官方固件更新
-- 摄像头与智能家居设备安全
+- [华硕路由器 WPA3 设置](https://home-network-safety.github.io/asus-router-wpa3-settings.html)
+- [WPA3 兼容排查](https://home-network-safety.github.io/wpa3-device-compatibility.html)
+- [路由器支持状态](https://home-network-safety.github.io/router-end-of-support.html)
+- [家用摄像头安全](https://home-network-safety.github.io/secure-home-security-camera.html)
 
-## 主要页面
-
-- https://home-network-safety.github.io/
-- https://home-network-safety.github.io/home-network-security-checklist.html
-- https://home-network-safety.github.io/secure-home-wifi.html
-- https://home-network-safety.github.io/unknown-device-on-wifi.html
-- https://home-network-safety.github.io/router-admin-password.html
-- https://home-network-safety.github.io/guest-wifi-security.html
-- https://home-network-safety.github.io/upnp-security.html
-- https://home-network-safety.github.io/router-firmware-update.html
-- https://home-network-safety.github.io/smart-home-device-security.html
-- https://home-network-safety.github.io/about.html
-
-## 内容边界
-
-本站仅提供防御性家庭网络安全信息，不提供攻击、入侵、绕过访问控制或扫描他人网络的指导。具体型号、菜单名称和功能以设备厂商与网络服务商当前说明为准。
+- [路由器远程管理检查](https://home-network-safety.github.io/router-remote-management.html)
+- [访客 Wi-Fi 隔离排查](https://home-network-safety.github.io/guest-wifi-isolation-not-working.html)

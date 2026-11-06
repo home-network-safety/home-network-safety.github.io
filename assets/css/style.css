@@ -226,8 +226,6 @@ tbody tr:nth-child(even) { background: rgba(220,234,240,0.28); }
 .disclaimer { color: #9fb0aa; }
 
 [data-reveal] { opacity: 1; transform: none; }
-.js [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 500ms ease, transform 500ms ease; }
-.js [data-reveal].is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   [data-reveal] { opacity: 1; transform: none; transition: none; }
@@ -291,84 +289,74 @@ tbody tr:nth-child(even) { background: rgba(220,234,240,0.28); }
   .footer-inner { grid-template-columns: 1fr; gap: 24px; }
   .disclaimer { grid-column: auto; }
 }
-.partner-banner {
-  padding: 38px 20px;
-  background: var(--sky);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.partner-banner-inner {
-  width: min(100%, var(--content-width));
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 36px;
-}
-
-.partner-banner-copy {
-  max-width: 760px;
-}
-
-.partner-label {
-  margin: 0 0 6px;
-  color: var(--forest-dark);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-.partner-banner h2 {
-  margin: 0;
-  font-size: 27px;
-  line-height: 1.35;
-}
-
-.partner-banner p {
-  margin: 10px 0 0;
-  color: var(--ink-soft);
-  font-size: 15px;
-}
-
-.partner-banner-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 10px 20px;
-  color: var(--white);
-  background: var(--forest-dark);
-  border-radius: 4px;
-  font-size: 15px;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.partner-banner-link:hover {
-  color: var(--white);
-  background: var(--ink);
-}
-
-@media (max-width: 700px) {
-  .partner-banner {
-    padding: 30px 16px;
-  }
-
-  .partner-banner-inner {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .partner-banner h2 {
-    font-size: 23px;
-  }
-
-  .partner-banner-link {
-    width: 100%;
-  }
-}
-
-
 a:focus-visible, button:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+
+/* Keep page content visible even if scripts or observers do not execute. */
+@media print {
+  .site-header, .site-footer, .reading-progress, .article-next, .hero-actions, .partner-banner { display: none !important; }
+  body { background: #fff; color: #111; }
+  .article-shell, .article-content { width: 100%; max-width: none; padding: 0; }
+  .article-content table { width: 100%; max-width: 100%; font-size: 11px; overflow: visible; }
+  .article-content th, .article-content td { min-width: 0; padding: 6px; }
+  tr { break-inside: avoid; }
+  a { color: inherit; }
+}
+
+
+/* 家庭网络安全自检 */
+.selfcheck { margin: 28px 0 40px; }
+.selfcheck-privacy { border-left: 4px solid #267663; padding: 14px 18px; background: #edf5f1; }
+.selfcheck-progress { position: sticky; top: 0; z-index: 4; background: #f8faf7; border: 1px solid #cfdcd5; padding: 14px 18px; margin: 22px 0; }
+.selfcheck-progress strong { display: block; margin-bottom: 10px; font-size: 15px; }
+.selfcheck-meter { height: 8px; background: #dae4de; border-radius: 8px; overflow: hidden; }
+.selfcheck-meter span { display: block; width: 0%; height: 100%; background: #267663; transition: width .15s ease; }
+.selfcheck-question { margin: 0 0 18px; padding: 22px; border: 1px solid #d2ddd6; border-radius: 10px; min-width: 0; }
+.selfcheck-question legend { font-size: 19px; font-weight: 750; line-height: 1.5; padding: 0 7px; }
+.selfcheck-question p { margin: 4px 0 16px; color: #465750; font-size: 15px; }
+.selfcheck-question label { display: inline-flex; align-items: center; gap: 7px; margin: 0 14px 10px 0; font-size: 15px; cursor: pointer; }
+.selfcheck-question input { accent-color: #267663; width: 17px; height: 17px; }
+.selfcheck-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0; }
+.check-action { border-radius: 6px; padding: 12px 18px; cursor: pointer; font-weight: 750; font-size: 15px; }
+.check-primary { background: #174f42; color: white; border: 2px solid #174f42; }
+.check-secondary { background: transparent; color: #174f42; border: 2px solid #174f42; }
+.check-action:focus-visible { outline: 3px solid #267663; outline-offset: 3px; }
+.selfcheck-results { background: #edf5f1; border-top: 4px solid #267663; padding: 24px; margin-top: 24px; }
+.selfcheck-results h2 { margin-top: 0; }
+.selfcheck-results h3 { font-size: 19px; }
+.selfcheck-results a { overflow-wrap: anywhere; }
+.selfcheck-footnote { font-size: 14px; color: #465750; }
+@media (max-width: 620px) { .selfcheck-question { padding: 18px 12px; } .selfcheck-question label { display: flex; margin: 0 0 14px; } .selfcheck-results { padding: 18px; } }
+@media print {
+  .site-header,.site-footer,.reading-progress,.article-next,.selfcheck-progress,.selfcheck-actions { display: none !important; }
+  #selfcheck-form { display: none !important; }
+  #selfcheck-results:not([hidden]) { display: block !important; }
+  .selfcheck-results { background: #fff; border: 0; padding: 0; }
+}
+
+/* Footer related websites: separate from security instructions. */
+.footer-friends { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.2); padding-top: 16px; }
+.footer-friends strong { display: block; font-size: 14px; margin-bottom: 6px; }
+.footer-friends p { margin: 0; display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
+.footer-friends a { overflow-wrap: anywhere; }
+@media (max-width: 620px) { .footer-friends { grid-column: auto; } }
+
+.selfcheck-copy-status { min-height: 1.4em; font-size: 14px; color: #174f42; }
+@media (prefers-reduced-motion: reduce) { .selfcheck-meter span { transition: none; } }
+
+/* Manually copyable, local-only report when Clipboard API is unavailable */
+.selfcheck-fallback-text { display: block; width: 100%; max-width: 100%; min-height: 170px; margin: 12px 0; padding: 12px; border: 1px solid #a9bcb4; border-radius: 6px; font: inherit; font-size: 14px; line-height: 1.55; }
+@media print { .selfcheck-fallback-text { display: none !important; } }
+
+.article-content table, .quick-table table { max-width: 100%; }
+.article-content { overflow-wrap: break-word; }
+@media (max-width: 620px) {
+  .article-content table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .article-content table:focus-visible { outline: 2px solid #267663; }
+}
+
+/* Narrow-screen comparison tables */
+@media (max-width: 620px) {
+  .quick-table { -webkit-overflow-scrolling: touch; }
+  .quick-table::after { content: "表格可向左右滑动查看"; display: block; font-size: 12px; color: #52645e; padding: 6px 2px; }
+  .article-content table { scrollbar-width: thin; }
+}

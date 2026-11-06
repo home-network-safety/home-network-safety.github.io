@@ -3,31 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>document.documentElement.classList.add('js');</script>
+
     <title>{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
     <meta name="robots" content="{{ page.robots | default: 'index,follow,max-image-preview:large' }}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:type" content="{% if page.home %}website{% else %}article{% endif %}">
+    <meta property="og:type" content="{% if page.article %}article{% else %}website{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:title" content="{{ page.h1 | default: page.title | default: site.title | escape }}">
     <meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:image" content="{{ page.image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url }}">
-    <meta name="twitter:card" content="summary_large_image">
+    {% if page.home or page.article_image %}<meta property="og:image" content="{{ page.article_image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url }}">{% endif %}
+    <meta name="twitter:card" content="{% if page.home or page.article_image %}summary_large_image{% else %}summary{% endif %}">
     <meta name="twitter:title" content="{{ page.h1 | default: page.title | default: site.title | escape }}">
     <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
-    <meta name="twitter:image" content="{{ page.image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url }}">
+    {% if page.home or page.article_image %}<meta name="twitter:image" content="{{ page.article_image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url }}">{% endif %}
+    <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}">
     <meta name="theme-color" content="#222827">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=1' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=6' | relative_url }}">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "{% if page.home %}WebSite{% elsif page.article %}Article{% else %}WebPage{% endif %}",
       "name": {{ page.title | default: site.title | jsonify }},
       {% if page.article %}"headline": {{ page.h1 | default: page.title | jsonify }},
-      "image": {{ page.image | default: '/assets/images/home-network-safety-hero.webp' | absolute_url | jsonify }},{% endif %}
+      {% if page.article_image %}"image": {{ page.article_image | absolute_url | jsonify }},{% endif %}{% endif %}
       "description": {{ page.description | default: site.description | jsonify }},
       "url": {{ page.url | absolute_url | jsonify }},
       "inLanguage": "zh-CN",
@@ -39,7 +44,6 @@
       }
     }
     </script>
-        <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3VTQKJNMB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -64,6 +68,7 @@
         <nav id="site-nav" class="site-nav" aria-label="主要导航">
           <a href="{{ '/' | relative_url }}">首页</a>
           <a href="{{ '/home-network-security-checklist.html' | relative_url }}">安全检查</a>
+          <a href="{{ '/network-security-self-check.html' | relative_url }}">自检工具</a>
           <a href="{{ '/secure-home-wifi.html' | relative_url }}">Wi-Fi 安全</a>
           <a href="{{ '/router-admin-password.html' | relative_url }}">路由器安全</a>
           <a href="{{ '/smart-home-device-security.html' | relative_url }}">智能设备</a>
@@ -81,7 +86,7 @@
             <p class="article-kicker">{{ page.category | default: '家庭网络安全' }}</p>
             <h1>{{ page.h1 | default: page.title }}</h1>
             {% if page.summary %}<p class="article-summary">{{ page.summary }}</p>{% endif %}
-            {% if page.updated %}<p class="updated">更新日期：{{ page.updated }}</p>{% endif %}
+            {% if page.article and page.updated %}<p class="updated">更新日期：{{ page.updated }}</p>{% endif %}
           </header>
           {{ content }}
         </article>
@@ -91,24 +96,6 @@
         </aside>
       </main>
     {% endif %}
-    {% if page.show_partner %}
-      <section class="partner-banner" aria-label="推广内容" data-reveal>
-        <div class="partner-banner-inner">
-          <div class="partner-banner-copy">
-            <p class="partner-label">推广 · 网络连接工具</p>
-            <h2>安全设置完成后，仍有连接体验问题？</h2>
-            <p>家庭网络加固不能解决游戏延迟、视频卡顿或远程办公线路问题。你可以前往虎跃加速器官网了解适用场景，并遵守所在地法律和服务条款。</p>
-          </div>
-          <a
-            class="partner-banner-link"
-            href="https://huyuejsq.co/"
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-            onclick="if (typeof gtag === 'function') { gtag('event', 'outbound_click', { link_url: this.href, link_name: 'huyue_sitewide_banner' }); }"
-          >访问虎跃加速器官网</a>
-        </div>
-      </section>
-    {% endif %}
     <footer class="site-footer">
       <div class="footer-inner">
         <div><strong>家庭网络安全指南</strong><p>检查设置，减少暴露，保留可恢复的操作路径。</p></div>
@@ -116,9 +103,13 @@
           <a href="{{ '/home-network-security-checklist.html' | relative_url }}">安全检查</a>
           <a href="{{ '/about.html' | relative_url }}">关于本站</a>
         </nav>
-        <p class="disclaimer">内容用于一般家庭网络安全参考。不同设备的菜单与功能可能不同，请以设备厂商和网络服务商的当前说明为准。</p>
+        <div class="footer-friends">
+          <strong>相关站点</strong>
+          <p><a href="https://woshiprog.github.io/network-troubleshooting-guide/" target="_blank" rel="noopener noreferrer">网络故障排查</a><span aria-hidden="true">·</span><a href="https://huyue-guide.github.io/" target="_blank" rel="noopener noreferrer">网络加速器</a><span aria-hidden="true">·</span><a href="https://huyyou.pages.dev/" target="_blank" rel="noopener noreferrer">加速器助手</a></p>
+        </div>
+        <p class="disclaimer">不同设备的设置方法可能有所不同，具体操作请参考厂商说明。</p>
       </div>
     </footer>
-    <script src="{{ '/assets/js/site.js?v=1' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/site.js?v=4' | relative_url }}" defer></script>
   </body>
 </html>

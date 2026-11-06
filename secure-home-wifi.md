@@ -5,13 +5,17 @@ description: 解释家庭 Wi-Fi 的 WPA3/WPA2 加密、密码、SSID、WPS、访
 h1: 家庭 Wi-Fi 怎么设置更安全？
 summary: 优先使用 WPA3 Personal 或 WPA2 Personal，设置独立强密码，关闭不需要的 WPS，并定期检查已连接设备。隐藏 Wi-Fi 名称不是核心防护。
 category: Wi-Fi 安全
-updated: 2026-09-29
+updated: 2026-11-06
 article: true
 next_label: 如果看到不认识的终端
 next_title: 按步骤识别并处理陌生设备
 next_url: /unknown-device-on-wifi.html
 permalink: /secure-home-wifi.html
 ---
+## 兼容性对照：WPA2/WPA3 过渡模式不是旧 WPA 混合模式
+
+Apple 当前路由器设置建议将 **WPA3-Personal** 作为优先选择；旧设备不兼容时可选 **WPA2/WPA3 Transitional**，或者在必要时使用 **WPA2-Personal（AES）**。其中 `WPA2/WPA3` 指新旧设备分别用 WPA2 或 WPA3 接入，**不是**包含已经过时的旧 `WPA`、`TKIP` 的 `WPA/WPA2 Mixed`。如果设置页面出现这些名称，先检查加密算法，再决定是否启用。参考：[Apple 官方路由器建议设置](https://support.apple.com/en-ie/102766)。
+
 ## 推荐设置一览
 
 | 设置 | 推荐状态 | 原因 |
@@ -29,10 +33,20 @@ permalink: /secure-home-wifi.html
 
 1. `WPA3 Personal`：设备都兼容时优先。
 2. `WPA2 Personal`：仍是家庭环境中常见且可用的选择。
-3. `WPA/WPA2 Mixed`：只在老设备无法连接、又暂时不能替换时过渡使用。
-4. `WEP` 或旧 `WPA`：已经过时，不应继续作为正常家庭网络的安全方式。
+3. `WPA2/WPA3 Transition`（如果路由器提供）：为支持 WPA2 和 WPA3 的设备提供兼容选择，具体是否适用需核对厂商说明。
+4. `WEP`、旧 `WPA`，以及包含旧 WPA 的 `WPA/WPA2 Mixed`：不推荐作为家庭网络的正常安全配置。
 
 有些路由器把选项写成 WPA3-SAE、WPA2-PSK/AES 或“增强开放网络”。具体名称以厂商说明为准。不要为了追求新选项而让重要设备全部失联，先列出兼容性较差的旧设备。
+
+使用华硕路由器的读者可直接参考[华硕 WPA3 的新旧固件菜单路径](/asus-router-wpa3-settings.html)。
+
+如果已经出现“开启 WPA3 后旧设备连不上”的情况，可以直接使用[WPA3 兼容故障排查](/wpa3-device-compatibility.html)，逐项区分安全模式、频段和已保存网络配置。
+
+## 一台旧设备连接不上 WPA3，怎么排查？
+
+先看它的说明书是否支持 WPA3。若只支持 WPA2，可尝试路由器提供的 **WPA2/WPA3 过渡模式**；如果该功能不稳定，评估改为 `WPA2-Personal (AES/CCMP)`，并为整个网络使用独立的强密码。不要为了让旧设备联网直接降到 WEP、旧 WPA 或包含旧 WPA 的混合模式。
+
+某些智能插座和打印机只支持 2.4GHz。频段兼容和加密兼容是两回事：先确认设备支持的频段，再检查安全模式。修改后用电脑或手机验证当前网络仍按预期加密。
 
 ## Wi-Fi 密码怎样设置？
 

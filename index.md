@@ -3,9 +3,8 @@ home: true
 title: 家庭网络安全指南
 seo_title: 家庭网络安全指南｜检查路由器、Wi-Fi 与智能设备
 description: 从路由器密码、Wi-Fi 加密、陌生设备、访客网络、UPnP、固件到智能家居，按优先级检查家庭网络安全设置。
-show_partner: true
 permalink: /
-updated: 2026-09-29
+updated: 2026-11-06
 ---
 <section class="home-hero">
   <div class="hero-inner">
@@ -15,7 +14,7 @@ updated: 2026-09-29
       <p class="hero-lead">检查路由器、Wi-Fi 与联网设备的安全设置。先处理高风险入口，再优化日常使用。</p>
       <div class="hero-actions">
         <a class="button button-primary" href="/home-network-security-checklist.html">开始安全检查</a>
-        <a class="button button-secondary" href="/unknown-device-on-wifi.html">发现陌生设备</a>
+        <a class="button button-secondary" href="/network-security-self-check.html">使用自检工具</a>
       </div>
     </div>
   </div>
@@ -58,7 +57,7 @@ updated: 2026-09-29
           <tr><td>无线加密</td><td>WPA3 Personal 或 WPA2 Personal</td><td class="risk-high">开放网络、WEP 或旧 WPA</td></tr>
           <tr><td>管理员密码</td><td>已修改且不与 Wi-Fi 密码重复</td><td class="risk-high">默认密码、弱密码或多人共用</td></tr>
           <tr><td>设备清单</td><td>每台设备都能识别</td><td class="risk-medium">持续出现无法确认的设备</td></tr>
-          <tr><td>固件状态</td><td>自动更新开启或已安装官方新版</td><td class="risk-medium">停止支持或无法获得安全更新</td></tr>
+          <tr><td>固件状态</td><td>仍受厂商安全支持，并已核对适用的官方固件更新</td><td class="risk-medium">停止支持或无法获得安全更新</td></tr>
         </tbody>
       </table>
     </div>
@@ -68,18 +67,18 @@ updated: 2026-09-29
 <section class="section section-sky" data-reveal>
   <div class="section-inner">
     <p class="section-kicker">按问题进入</p>
-    <h2>一次只改一个设置，并保留恢复路径</h2>
-    <p class="section-intro">记录原始设置、设备型号和上网账号信息。修改后立即测试，不要在不清楚后果时连续重置多项配置。</p>
+    <h2>按自己的问题开始，先确认再修改</h2>
+    <p class="section-intro">如果怀疑密码泄露或设备异常，先看对应的排查步骤。涉及重置、固件升级时，再备份必要配置，避免把正常网络弄断。</p>
     <div class="path-grid">
       <div class="path">
         <h3>先做完整检查</h3>
         <p>快速核对密码、加密、设备、固件和远程管理。</p>
-        <a href="/home-network-security-checklist.html">打开安全检查清单</a>
+        <a href="/network-security-self-check.html">10 项快速自检</a> · <a href="/home-network-security-checklist.html">文字检查清单</a>
       </div>
       <div class="path">
         <h3>处理连接权限</h3>
         <p>从陌生设备、Wi-Fi 密码、WPS 和访客网络开始。</p>
-        <a href="/secure-home-wifi.html">检查 Wi-Fi 安全</a>
+        <a href="/unknown-device-on-wifi.html">排查陌生设备</a> · <a href="/secure-home-wifi.html">检查 Wi-Fi 安全</a>
       </div>
       <div class="path">
         <h3>隔离智能设备</h3>
@@ -92,12 +91,28 @@ updated: 2026-09-29
 
 <section class="section" data-reveal>
   <div class="section-inner">
-    <p class="section-kicker">完整主题</p>
-    <h2>从路由器入口到家中每台联网设备</h2>
+    <p class="section-kicker">设备菜单对照</p>
+    <h2>找到正确的设置入口，不必猜菜单</h2>
+    <p class="section-intro">不同品牌、固件和运行模式的菜单并不完全相同。以下指南附有可核对的厂商官方界面截图链接。</p>
     <div class="path-grid">
-      <div class="path"><h3>路由器控制权</h3><p>管理密码、远程管理、UPnP 和官方固件更新。</p><a href="/router-admin-password.html">进入路由器安全</a><br><a href="/upnp-security.html">检查 UPnP</a> · <a href="/router-firmware-update.html">检查固件更新</a></div>
-      <div class="path"><h3>家庭成员与访客</h3><p>主网络密码、访客网络和设备间隔离。</p><a href="/guest-wifi-security.html">设置访客网络</a></div>
-      <div class="path"><h3>摄像头与智能家居</h3><p>默认账号、两步验证、应用权限和停止支持的设备。</p><a href="/smart-home-device-security.html">查看设备安全清单</a></div>
+      <div class="path"><h3>华硕 WPA3 新旧界面</h3><p>按固件菜单分辨 Web 与 App 设置路径。</p><a href="/asus-router-wpa3-settings.html">查看菜单对照</a></div>
+      <div class="path"><h3>访客网络权限差异</h3><p>区分 ASUS 路由模式与 TP-Link 部分 xDSL 型号。</p><a href="/guest-wifi-security.html">比较隔离设置</a></div>
+      <div class="path"><h3>Tapo 摄像头共享</h3><p>核对 Basic、Advanced 和仅实时画面权限。</p><a href="/secure-home-security-camera.html">查看权限区别</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sky" data-reveal>
+  <div class="section-inner">
+    <p class="section-kicker">遇到具体问题</p>
+    <h2>按症状排查，不用一次修改所有设置</h2>
+    <div class="path-grid">
+      <div class="path"><h3>WPA3 开启后连不上</h3><p>检查加密模式、旧设备能力和频段。</p><a href="/wpa3-device-compatibility.html">查看兼容性排查</a></div>
+      <div class="path"><h3>访客网络仍能看到家用设备</h3><p>验证主网隔离、访客互访和 AP 模式。</p><a href="/guest-wifi-isolation-not-working.html">检查访客隔离</a></div>
+      <div class="path"><h3>路由器管理页面可从外网进入</h3><p>区分 WAN 管理、云端 App 和 VPN。</p><a href="/router-remote-management.html">核对远程管理</a></div>
+      <div class="path"><h3>固件显示最新但设备很旧</h3><p>核实厂商是否还提供安全维护。</p><a href="/router-end-of-support.html">核实支持状态</a></div>
+      <div class="path"><h3>摄像头共享权限不清楚</h3><p>检查账号、家庭共享和远程访问权限。</p><a href="/secure-home-security-camera.html">检查摄像头安全</a></div>
+      <div class="path"><h3>路由器需要更新固件</h3><p>核对型号与硬件版本，备份必要设置。</p><a href="/router-firmware-update.html">安全更新固件</a></div>
     </div>
   </div>
 </section>

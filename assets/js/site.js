@@ -2,11 +2,31 @@ const menuButton = document.querySelector('.menu-button');
 const siteNav = document.querySelector('.site-nav');
 
 if (menuButton && siteNav) {
+  const closeMenu = () => {
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', '打开导航');
+    siteNav.classList.remove('is-open');
+  };
   menuButton.addEventListener('click', () => {
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!expanded));
-    menuButton.setAttribute('aria-label', expanded ? '打开导航' : '关闭导航');
-    siteNav.classList.toggle('is-open', !expanded);
+    const open = menuButton.getAttribute('aria-expanded') !== 'true';
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? '关闭导航' : '打开导航');
+    siteNav.classList.toggle('is-open', open);
+  });
+  siteNav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && siteNav.classList.contains('is-open')) {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (!menuButton.contains(event.target) && !siteNav.contains(event.target)) closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
   });
 }
 

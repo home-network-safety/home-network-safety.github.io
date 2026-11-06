@@ -1,11 +1,11 @@
 ---
 title: 关于家庭网络安全指南
 seo_title: 关于本站｜家庭网络安全指南
-description: 了解家庭网络安全指南覆盖的内容、适合的读者和使用方式。
+description: 家庭 Wi-Fi、路由器与智能设备常见安全问题的检查入口，以及修改设置前需要注意的事项。
 h1: 关于家庭网络安全指南
 summary: 本站面向普通家庭，用清楚、可恢复的步骤解释路由器、Wi-Fi 和联网设备安全，不要求读者具备专业网络知识。
 category: 关于本站
-updated: 2026-09-29
+updated: 2026-11-06
 permalink: /about.html
 next_label: 第一次来这里？
 next_title: 从家庭网络安全检查清单开始
@@ -22,17 +22,12 @@ next_url: /home-network-security-checklist.html
 - 陌生设备识别与处理。
 - 路由器管理员账号、UPnP 与固件更新。
 - 摄像头、电视、音箱和其他智能设备的基础安全检查。
+- [WPA3 兼容问题](/wpa3-device-compatibility.html)、[路由器停止支持](/router-end-of-support.html)与[家用摄像头访问权限](/secure-home-security-camera.html)的具体排查。
 
-## 怎么使用更省事？
+## 资料与设备差异
 
-第一次检查家庭网络，可以直接打开[家庭网络安全检查清单](/home-network-security-checklist.html)，按优先级逐项核对。
+不同品牌、型号、地区与固件版本的菜单可能不同。涉及无线加密、远程管理或更新操作时，先核对设备标签与厂商对应版本的说明。本站相关指南尽可能提供官方资料链接；如仍无法确认设置或恢复方式，请联系厂商或网络服务商。
 
-如果你已经遇到具体问题，就不必从头读：发现陌生设备可直接看[Wi-Fi 出现陌生设备怎么办](/unknown-device-on-wifi.html)；准备修改无线设置可看[家庭 Wi-Fi 安全设置](/secure-home-wifi.html)；准备处理路由器后台则从[管理员密码安全设置](/router-admin-password.html)开始。
+修改路由器配置之前，保存必要的宽带拨号、IPTV、电话或 Mesh 设置。不要向不明联系人发送管理员密码、设备配置备份或其他敏感信息。
 
-## 使用前要注意什么？
-
-不同品牌、型号和运营商设备的菜单名称会不同。修改设置前，先记下当前配置和设备型号；涉及宽带拨号、IPTV、电话或 Mesh 时，也应保留恢复信息。
-
-不要为了“更安全”一次改很多项。一次改一项、马上测试，出了问题更容易恢复。
-
-本站内容用于一般家庭网络安全参考，不提供攻击、入侵或绕过访问控制的操作指导。
+参考资料：[FTC 家庭 Wi-Fi 安全指南](https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network)、[NSA 家庭网络安全实践](https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/3304674/nsa-releases-best-practices-for-securing-your-home-network/)。

@@ -1,0 +1,81 @@
+---
+title: 家庭网络安全自检
+seo_title: 家庭网络安全自检工具｜逐项确认路由器、Wi-Fi 与智能设备
+description: 免费家庭网络安全自检：逐项核对管理员密码、无线加密、设备、远程管理、固件与访客隔离，查看待处理事项。无需登录，不扫描网络。
+h1: 家庭网络安全自检
+summary: 对照自己的路由器设置回答几个问题，生成一份按问题类型排序的待处理清单。这个工具不扫描设备，也无法判断网络是否被入侵。
+category: 安全检查
+updated: 2026-11-06
+permalink: /network-security-self-check.html
+next_label: 需要更详细的操作步骤？
+next_title: 查看完整家庭网络安全检查清单
+next_url: /home-network-security-checklist.html
+---
+<p>先打开路由器官方管理页面或应用，逐项确认。每个项目选择<strong>已确认、需要处理或不确定</strong>。没有核对过的项目不要猜测；“不确定”也是有效结果。</p>
+<p class="selfcheck-privacy">此工具仅在当前页面计算结果，不需要账号，不会读取设备信息、Wi-Fi 密码或扫描家庭网络。刷新页面后选择不会保存。页面仍可能使用本站现有的访问统计服务，但不会通过自检脚本发送选择结果。</p>
+<div id="security-self-check" class="selfcheck" aria-label="家庭网络安全自检">
+  <div class="selfcheck-progress" aria-live="polite"><strong id="selfcheck-progress-text">已回答 0 / 10 项</strong><div class="selfcheck-meter" aria-hidden="true"><span id="selfcheck-meter-bar"></span></div></div>
+  <form id="selfcheck-form">
+    <fieldset class="selfcheck-question" data-key="admin" data-priority="1" data-topic="管理员密码" data-link="/router-admin-password.html">
+      <legend>1. 路由器管理员密码已经修改，且与 Wi-Fi 密码不同吗？</legend>
+      <p>这里指登录路由器后台的密码，不是连接 Wi-Fi 时输入的密码。</p>
+      <label><input type="radio" name="admin" value="yes"> 已确认</label><label><input type="radio" name="admin" value="no"> 需要处理</label><label><input type="radio" name="admin" value="unknown"> 不确定</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="wifi" data-priority="2" data-topic="Wi-Fi 加密" data-link="/secure-home-wifi.html">
+      <legend>2. 无线网络使用 WPA3-Personal 或 WPA2-Personal（AES）吗？</legend>
+      <p>可接受厂商支持的 WPA2/WPA3 过渡模式；不要将旧 WPA/WPA2 混合模式误认为相同设置。</p>
+      <label><input type="radio" name="wifi" value="yes"> 已确认</label><label><input type="radio" name="wifi" value="no"> 需要处理</label><label><input type="radio" name="wifi" value="unknown"> 不确定</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="clients" data-priority="4" data-topic="陌生设备" data-link="/unknown-device-on-wifi.html">
+      <legend>3. 已确认当前在线设备的身份吗？</legend>
+      <p>不要把历史 DHCP 租约、随机 MAC 地址直接当作陌生人入侵。</p>
+      <label><input type="radio" name="clients" value="yes"> 已确认</label><label><input type="radio" name="clients" value="no"> 有持续无法解释的在线设备</label><label><input type="radio" name="clients" value="unknown"> 尚未核对</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="remote" data-priority="3" data-topic="远程管理" data-link="/router-remote-management.html">
+      <legend>4. 不需要的 WAN 侧远程管理已关闭吗？</legend>
+      <p>如果确实需要远程管理，应单独评估身份验证与访问限制，不要仅因功能开启就假定已入侵。</p>
+      <label><input type="radio" name="remote" value="yes"> 已确认或已妥善限制</label><label><input type="radio" name="remote" value="no"> 需要处理</label><label><input type="radio" name="remote" value="unknown"> 不确定</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="wps" data-priority="7" data-topic="WPS" data-link="/secure-home-wifi.html">
+      <legend>5. 不使用的 WPS（尤其 PIN 方式）已关闭吗？</legend>
+      <p>查找路由器无线设置中的 WPS 选项，部分设备没有单独开关。</p>
+      <label><input type="radio" name="wps" value="yes"> 已确认或设备不提供</label><label><input type="radio" name="wps" value="no"> 需要处理</label><label><input type="radio" name="wps" value="unknown"> 不确定</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="firmware" data-priority="5" data-topic="固件与支持状态" data-link="/router-firmware-update.html">
+      <legend>6. 路由器仍获官方安全支持，且固件已检查过吗？</legend>
+      <p>“检查更新没有新版本”不一定说明设备仍被厂商维护。</p>
+      <label><input type="radio" name="firmware" value="yes"> 已确认</label><label><input type="radio" name="firmware" value="no"> 已停更或需要更新</label><label><input type="radio" name="firmware" value="unknown"> 不确定</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="guest" data-priority="9" data-topic="访客隔离" data-link="/guest-wifi-security.html">
+      <legend>7. 如果使用访客网络，已经核对它的内网访问权限吗？</legend>
+      <p>没有启用访客网络的家庭可以选“已确认或不适用”；不需要为了勾选而强行开启。</p>
+      <label><input type="radio" name="guest" value="yes"> 已确认或不适用</label><label><input type="radio" name="guest" value="no"> 隔离未生效</label><label><input type="radio" name="guest" value="unknown"> 不确定</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="upnp" data-priority="8" data-topic="UPnP 与端口映射" data-link="/upnp-security.html">
+      <legend>8. 了解 UPnP 的使用需求，并检查过不必要的端口开放吗？</legend>
+      <p>并非所有家庭都要一律关闭 UPnP；重点是知道哪些应用在使用它。</p>
+      <label><input type="radio" name="upnp" value="yes"> 已确认</label><label><input type="radio" name="upnp" value="no"> 发现不需要的映射</label><label><input type="radio" name="upnp" value="unknown"> 不确定</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="iot" data-priority="6" data-topic="智能设备" data-link="/smart-home-device-security.html">
+      <legend>9. 摄像头、门铃等重要设备的账号和更新状态已核对吗？</legend>
+      <p>重点关注重复密码、两步验证、云端共享权限和停止支持的设备。</p>
+      <label><input type="radio" name="iot" value="yes"> 已确认或无此类设备</label><label><input type="radio" name="iot" value="no"> 需要处理</label><label><input type="radio" name="iot" value="unknown"> 不确定</label>
+    </fieldset>
+    <fieldset class="selfcheck-question" data-key="backup" data-priority="10" data-topic="恢复路径" data-link="/home-network-security-checklist.html">
+      <legend>10. 修改重要设置之前，能找回管理员入口和必要配置吗？</legend>
+      <p>避免不清楚宽带拨号、IPTV 或 Mesh 配置时直接恢复出厂设置。</p>
+      <label><input type="radio" name="backup" value="yes"> 已确认</label><label><input type="radio" name="backup" value="no"> 需要准备</label><label><input type="radio" name="backup" value="unknown"> 不确定</label>
+    </fieldset>
+    <div class="selfcheck-actions"><button type="button" id="selfcheck-results-button" class="check-action check-primary">查看待处理事项</button><button type="reset" class="check-action check-secondary">清空选择</button></div>
+  </form>
+  <section id="selfcheck-results" class="selfcheck-results" hidden tabindex="-1" aria-labelledby="selfcheck-results-heading">
+    <h2 id="selfcheck-results-heading">你的核对结果</h2>
+    <p id="selfcheck-counts" aria-live="polite"></p>
+    <div id="selfcheck-followups"></div>
+    <div class="selfcheck-actions"><button type="button" class="check-action check-secondary" id="selfcheck-copy">复制待办清单</button><button type="button" class="check-action check-secondary" id="selfcheck-print">打印或保存为 PDF</button></div>
+    <p id="selfcheck-copy-status" class="selfcheck-copy-status" role="status" aria-live="polite"></p>
+    <p class="selfcheck-footnote">这些结果来自你自己的选择，不是漏洞扫描，也不构成网络已安全或已遭入侵的证明。建议优先处理已确认存在的问题，再核对不确定项。</p>
+  </section>
+</div>
+<noscript><p class="warning">此互动清单需要 JavaScript。你仍可以使用<a href="/home-network-security-checklist.html">文字版家庭网络安全检查清单</a>逐项核对。</p></noscript>
+<script src="{{ '/assets/js/self-check.js?v=4' | relative_url }}" defer></script>

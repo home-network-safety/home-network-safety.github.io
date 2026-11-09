@@ -34,13 +34,18 @@ updated: 2026-11-06
   <div class="partner-banner-inner">
     <div class="partner-banner-heading">
       <span class="partner-banner-tag">广告 · 推广</span>
-      <span class="partner-banner-context">虎跃 VPN</span>
+      <span class="partner-banner-context">虎跃加速器</span>
     </div>
-    <a class="partner-banner-link" href="https://huyuejsq.co/" target="_blank" rel="sponsored noopener noreferrer" aria-label="了解虎跃 VPN 服务（广告，在新窗口打开）">
-      <picture>
-        <source media="(max-width: 620px)" srcset="/assets/images/huyue-promo-mobile.webp" type="image/webp">
-        <img src="/assets/images/huyue-promo-banner.webp" alt="虎跃 VPN 网络加速服务推广横幅" width="1200" height="200" loading="lazy" decoding="async">
-      </picture>
+    <a class="partner-banner-link" href="https://huyuejsq.co/" target="_blank" rel="sponsored noopener noreferrer" aria-label="了解虎跃加速器（广告，在新窗口打开）">
+      <img class="partner-banner-desktop" src="/assets/images/huyue-promo-banner-20261109.jpg" alt="虎跃加速器推广横幅" width="1200" height="200" loading="lazy" decoding="async">
+      <span class="partner-banner-mobile" aria-hidden="true">
+        <span class="partner-mobile-brand">虎跃加速器</span>
+        <span class="partner-mobile-years">稳定运营8年+</span>
+        <span class="partner-mobile-highlight">不限流量</span>
+        <span class="partner-mobile-benefits">爽片不卡顿 · 4K秒开</span>
+        <span class="partner-mobile-details">无记录 · 隐藏真实IP</span>
+        <span class="partner-mobile-service">支持定制独享服务</span>
+      </span>
     </a>
     <p class="partner-banner-footnote">以上为广告主宣传，具体功能、服务条件及适用范围请以服务商说明为准。</p>
   </div>

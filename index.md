@@ -17,6 +17,32 @@ updated: 2026-11-06
         <a class="button button-secondary" href="/network-security-self-check.html">使用自检工具</a>
       </div>
     </div>
+    <aside class="hero-panel" aria-label="建议先检查的事项">
+      <p class="hero-panel-label">START HERE / 从这里开始</p>
+      <h2>先排查这 3 类风险</h2>
+      <ul>
+        <li><span>01</span><a href="/router-admin-password.html">管理员密码是否仍是默认密码</a></li>
+        <li><span>02</span><a href="/unknown-device-on-wifi.html">有不认识的设备连接 Wi-Fi</a></li>
+        <li><span>03</span><a href="/router-end-of-support.html">路由器是否已停止安全更新</a></li>
+      </ul>
+      <a class="hero-panel-footer" href="/network-security-self-check.html">用 10 项自检整理待办 →</a>
+    </aside>
+  </div>
+</section>
+
+<section class="partner-banner-section" aria-label="广告推广">
+  <div class="partner-banner-inner">
+    <div class="partner-banner-heading">
+      <span class="partner-banner-tag">广告 · 推广</span>
+      <span class="partner-banner-context">虎跃 VPN</span>
+    </div>
+    <a class="partner-banner-link" href="https://huyuejsq.co/" target="_blank" rel="sponsored noopener noreferrer" aria-label="了解虎跃 VPN 服务（广告，在新窗口打开）">
+      <picture>
+        <source media="(max-width: 620px)" srcset="/assets/images/huyue-promo-mobile.webp" type="image/webp">
+        <img src="/assets/images/huyue-promo-banner.webp" alt="虎跃 VPN 网络加速服务推广横幅" width="1200" height="200" loading="lazy" decoding="async">
+      </picture>
+    </a>
+    <p class="partner-banner-footnote">以上为广告主宣传，具体功能、服务条件及适用范围请以服务商说明为准。</p>
   </div>
 </section>
 
@@ -116,3 +142,4 @@ updated: 2026-11-06
     </div>
   </div>
 </section>
+
